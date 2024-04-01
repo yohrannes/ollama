@@ -1,0 +1,6 @@
+k create ns ollama
+helm repo add ollama-helm https://otwld.github.io/ollama-helm/
+helm repo update
+helm install -f values.yaml ollama ollama-helm/ollama --namespace ollama
+export OLLAMA_HOST=ai.yohrannes.com
+helm delete ollama --namespace ollama
